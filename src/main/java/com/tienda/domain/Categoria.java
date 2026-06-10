@@ -6,8 +6,9 @@ package com.tienda.domain;
 
 /**
  *
- * @author sebas
+ * @author allam
  */
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,3 +45,4 @@ public class Categoria implements Serializable {
     @Column(name = "activo")
     private Boolean activo;
 }
+

@@ -33,10 +33,10 @@ public class CategoriaController {
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalCategorias", categorias.size());
-        return "categoria/listado";
+        return "/categoria/listado";
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/guardar") 
     public String guardar(@Valid Categoria categoria, @RequestParam MultipartFile imagenFile, RedirectAttributes redirectAttributes) {
 
         categoriaService.save(categoria, imagenFile);
@@ -53,7 +53,7 @@ public class CategoriaController {
             categoriaService.delete(idCategoria);
         } catch (IllegalArgumentException e) {
             titulo = "error"; // Captura la excepción de argumento inválido para el mensaje de "no existe"
-            detalle = "categoria.error01";
+            detalle = "categoria.error01"; //lo captura en todos los idiomas
         } catch (IllegalStateException e) {
             titulo = "error"; // Captura la excepción de estado ilegal para el mensaje de "datos asociados"
             detalle = "categoria.error02";
@@ -76,3 +76,4 @@ public class CategoriaController {
         return "/categoria/modifica";
     }
 }
+//Repasar

@@ -15,7 +15,7 @@ import org.springframework.core.io.ClassPathResource;
 public class StorageConfig {
 
     @Value("${firebase.json.path}")
-    private String jsonPath;
+    private String jsonPath; 
 
     @Value("${firebase.json.file}")
     private String jsonFile;
